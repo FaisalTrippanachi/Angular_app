@@ -1,0 +1,51 @@
+<div class="container">
+    <div class="row" style="padding-top: 3%;">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6">
+            <form class="example-form" method="POST" (ngSubmit)="InsertDatas()">
+                <div class="form-group">
+                    <mat-form-field class="example-full-width">
+                        <input matInput placeholder="First Name" name="f_name" id="f_name" [(ngModel)]="resr.f_name" required>
+                    </mat-form-field>
+                </div>
+                <div class="form-group">
+                    <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Last Name" id="lname" name="l_name" id="l_name" [(ngModel)]="resr.l_name" required>
+                    </mat-form-field>
+                </div>
+                <div class="form-group">
+                    <mat-form-field class="example-full-width">
+                        <input matInput [matDatepicker]="picker" name="dob" id="dob" placeholder="Date Of Birth*" [(ngModel)]="resr.dob" required>
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>
+                </div>
+
+                <div class="form-group">
+                    <mat-radio-group aria-label="Select an option" name="gender" id="gender" [(ngModel)]="resr.gender">
+                        <mat-radio-button value="male" required>Male</mat-radio-button> &nbsp;&nbsp;
+                        <mat-radio-button value="female">Female</mat-radio-button>
+                    </mat-radio-group>
+                </div>
+                <div class="form-group">
+                    <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Username" name="username" id="username" [(ngModel)]="resr.username" required>
+                    </mat-form-field>
+                </div>
+                <div class="form-group">
+                    <mat-form-field class="example-full-width">
+                        <input type="password" matInput placeholder="Password" [(ngModel)]="resr.password" name="password" id="password" required>
+                    </mat-form-field>
+                </div>
+                <!-- <div class="form-group">
+                    <mat-form-field class="example-full-width">
+                        <input type="password" matInput placeholder="Confirm Password"  id="cpassword" required>
+                    </mat-form-field>
+                </div> -->
+                <button type="reset" mat-raised-button color="warn">Cancel</button> &nbsp;
+                <button type="submit" mat-raised-button color="accent">Register</button>
+            </form>
+        </div>
+        <div class="col-sm-3"></div>
+    </div>
+</div>
